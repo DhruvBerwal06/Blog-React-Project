@@ -28,7 +28,7 @@ function App() {
     <div className="min-h-screen flex flex-wrap content-between bg-slate-100 text-slate-800">
       <div className="w-full block">
         <Header />
-        <main className="bg-slate-50 min-h-[70vh]">
+        <main className="min-h-[70vh] bg-slate-50 px-0 sm:px-2 lg:px-0">
           <Outlet />
         </main>
         <Footer />
