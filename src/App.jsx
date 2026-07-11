@@ -25,14 +25,12 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between bg-slate-100 text-slate-800">
-      <div className="w-full block">
-        <Header />
-        <main className="min-h-[70vh] bg-slate-50 px-0 sm:px-2 lg:px-0">
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
+    <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.12),_transparent_25%),linear-gradient(135deg,_#f8fafc_0%,_#eef2ff_100%)] text-slate-800">
+      <Header />
+      <main className="flex-1 bg-transparent px-0 py-6 sm:px-2 sm:py-8 lg:px-0 lg:py-10">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   ) : null;
 }

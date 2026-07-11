@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: Inter, "Segoe UI", sans-serif;
 }
 
 #root {
   min-height: 100vh;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.25);
+  color: #0f172a;
 }
 
 /* Logo styling */
@@ -16,7 +28,7 @@ a.inline-block {
   justify-content: center;
   overflow: hidden;
   border-radius: 9999px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 a.inline-block img {

@@ -37,12 +37,12 @@ function Header() {
   ];
 
   return (
-    <header className="py-3 shadow-md bg-slate-800 text-white">
+    <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-900/95 text-white shadow-sm backdrop-blur">
       <Container>
-        <nav className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div className="flex justify-center sm:justify-start sm:mr-4">
+        <nav className="flex flex-col gap-3 py-3 sm:flex-row sm:items-center">
+          <div className="flex justify-center sm:mr-4 sm:justify-start">
             <Link to="/">
-              <Logo width="70px" />
+              <Logo width="100px" />
             </Link>
           </div>
           <ul className="flex flex-wrap items-center justify-center gap-2 sm:ml-auto sm:justify-end">
@@ -51,7 +51,7 @@ function Header() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.slug)}
-                    className="px-3 py-2 rounded-full text-xs sm:text-sm font-medium text-slate-100 transition-colors duration-200 hover:bg-slate-700 hover:text-white"
+                    className="rounded-full px-3 py-2 text-xs font-medium text-slate-100 transition-all duration-200 hover:bg-white/10 hover:text-white sm:text-sm"
                   >
                     {item.name}
                   </button>
