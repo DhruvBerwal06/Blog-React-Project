@@ -10,17 +10,21 @@ function Home() {
   const showWelcomeSection = !authStatus;
 
   useEffect(() => {
+    if (!authStatus) {
+      setPosts([]);
+      return;
+    }
+
     appwriteService.getPosts().then((posts) => {
       if (posts) {
         setPosts(posts.documents);
       }
     });
-  }, []);
+  }, [authStatus]);
 
   return (
     <div className="w-full py-2 sm:py-4">
       <Container>
-        {/* 1. Welcome Section is now declared exactly ONCE */}
         {showWelcomeSection && (
           <div className="mb-8 rounded-[2rem] border border-slate-200/80 bg-white/80 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur sm:p-8">
             <div className="max-w-2xl">
@@ -37,7 +41,6 @@ function Home() {
           </div>
         )}
 
-        {/* 2. Toggle between the login card or the posts list */}
         {posts.length === 0 ? (
           <div className="rounded-[1.5rem] border border-slate-200 bg-white p-8 text-center shadow-sm">
             <Link
